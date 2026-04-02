@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, Bell, UserCircle } from 'lucide-react';
+import { Menu, UserCircle } from 'lucide-react';
 import { useFinance } from '../../context/FinanceContext';
 
 const TAB_LABELS = {
@@ -39,10 +39,6 @@ export default function Header({ onMenuClick }) {
           <span className={`w-1.5 h-1.5 rounded-full ${state.role === 'admin' ? 'bg-emerald-500 dark:bg-emerald-400' : 'bg-slate-400 dark:bg-slate-500'}`} />
           {state.role === 'admin' ? 'Admin' : 'Viewer'}
         </div>
-        <button className="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors relative">
-          <Bell size={18} />
-          <span className="absolute top-1.5 right-1.5 w-1.5 h-1.5 bg-emerald-500 dark:bg-emerald-400 rounded-full" />
-        </button>
         <button className="flex items-center gap-2 p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
           <div className="w-7 h-7 rounded-full bg-gradient-to-br from-emerald-400 to-cyan-500 flex items-center justify-center text-white text-xs font-bold shadow-sm">
             {state.role === 'admin' ? 'A' : 'V'}
